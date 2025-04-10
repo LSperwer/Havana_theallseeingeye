@@ -6,12 +6,12 @@
 	<div id="header" class="clearfix">
 		<h1><a href="{{ site.sitePath }}/"></a></h1>
        <div id="subnavi">
-            <div id="subnavi-user">
+           <!-- <div id="subnavi-user">
                 <div class="clearfix">&nbsp;</div>
                 <p>
-				        <a href="{{ site.sitePath }}/client" id="enter-hotel-open-medium-link" target="client" onclick="HabboClient.openOrFocus(this); return false;">Enter {{ site.siteName }} Hotel</a>
+				        <a href="{{ site.sitePath }}/shockwave_client" class="new-button green-button" target="shockwave_client" onclick="HabboClient.openOrFocus(this); return false;"><b>Enter Shockwave</b><i></i></a>
                 </p>
-            </div>
+            </div> -->
             <div id="subnavi-login">
                 <form action="{{ site.sitePath }}/account/submit" method="post" id="login-form">
             		<input type="hidden" name="page" value="/community" />
@@ -87,7 +87,7 @@
 			
 		</ul>
 
-        <div id="habbos-online"><div class="rounded"><span>{{ site.formattedUsersOnline }} {{ site.siteName }}s online</span></div></div>
+        <div id="habbos-online"><div class="rounded"><span>{{ site.formattedUsersOnline }} {{ site.siteName }}es online</span></div></div>
 	</div>
 </div>
 
@@ -109,17 +109,18 @@
                 <div id="subnavi-search-upper">
 
                 <ul id="subnavi-search-links">
-                    <li><a href="{{ site.sitePath }}/help" target="habbohelp" onclick="openOrFocusHelp(this); return false">Help</a></li>
+                    <li><a href="{{ site.sitePath }}/help">Help</a></li>
 					<li><a href="{{ site.sitePath }}/account/logout" class="userlink" id="signout">Sign Out</a></li>
 				</ul>
                 </div>
             </div>
             <div id="to-hotel">
                         {% if site.serverOnline %}
-						<a href="{{ site.sitePath }}/client" class="new-button green-button" target="client" onclick="HabboClient.openOrFocus(this); return false;"><b>Enter {{ site.siteName }} 
-                        Hotel</b><i></i></a>
+						<a href="{{ site.sitePath }}/shockwave_client" class="new-button green-button" target="shockwave_client" onclick="HabboClient.openOrFocus(this); return false;"><b>Enter Shockwave</b><i></i></a>
+						<a href="{{ site.sitePath }}/flash_client" class="new-button green-button" target="flash_client" onclick="HabboClient.openOrFocus(this); return false;"><b>Enter Flash</b><i></i></a>
                         {% else %}
-                        <div id="hotel-closed-medium">{{ site.siteName }} Hotel is offline</div>
+						<a class="new-button closed-button"><b>Enter Shockwave</b><i></i></a>
+						<a class="new-button closed-button"><b>Enter Flash</b><i></i></a>  
                         {% endif %}
 			</div>
         </div>
@@ -171,13 +172,23 @@
 				<a href="{{ site.sitePath }}/games">Games</a>			<span></span>
 			</li>
 			{% endif %}
+			
+			{% if session.currentPage == "help" %}
+			<li class="selected">
+				<strong>Help</strong>			<span></span>
+			</li>
+			{% else %}
+			<li>
+				<a href="{{ site.sitePath }}/help">Help</a>			<span></span>
+			</li>
+			{% endif %}
 			{% if playerDetails.getRank().getRankId() >= 6 %}
-				<li id="tab-register-now"><a href="{{ site.sitePath }}/ase/housekeeping/es">Housekeeping</a><span></span></li>
+				<li id="tab-register-now"><a href="{{ site.sitePath }}/allseeingeye/hk/" target="_blank">Housekeeping</a><span></span></li>
 			{% endif %}
 			
 		</ul>
 
-        <div id="habbos-online"><div class="rounded"><span>{{ site.formattedUsersOnline }} {{ site.siteName }}s online</span></div></div>
+        <div id="habbos-online"><div class="rounded"><span>{{ site.formattedUsersOnline }} {{ site.siteName }}es online</span></div></div>
 	</div>
 </div>
 

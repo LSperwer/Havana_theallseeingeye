@@ -5,6 +5,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html" />
 	<title>{{ site.siteName }}: Register </title>
+	<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 
 <script type="text/javascript">
 var andSoItBegins = (new Date()).getTime();
@@ -112,7 +113,38 @@ if (typeof HabboClient != "undefined") { HabboClient.windowName = "client"; }
         });
 
     </script>
-
+	<script>
+            window.RufflePlayer = window.RufflePlayer || {};
+            window.RufflePlayer.config = {
+                "autoplay": "on",
+                "unmuteOverlay": "hidden",
+                "splashScreen": false,
+                contextMenu: "off", // Optional argument, for enable remplace "off" with "on" or just delete this line
+            };
+            window.addEventListener("load", (event) => {
+                const ruffle = window.RufflePlayer.newest();
+                const player = ruffle.createPlayer();
+                const container = document.getElementById("register-avatar-editor");
+                container.innerHTML = '';
+                container.appendChild(player);
+                player.load({
+                    url: '{{ site.staticContentPath }}/flash/HabboRegistration.swf',
+                    parameters: 'base={{ site.staticContentPath }}/flash/&'+
+                                'figuredata_url={{ site.staticContentPath }}/xml/figuredata.xml&'+
+                                'draworder_url={{ site.staticContentPath }}/xml/draworder.xml&'+
+                                'localization_url={{ site.staticContentPath }}/xml/figure_editor.xml&'+
+                                'habbos_url={{ site.staticContentPath }}/xml/promo_habbos_v2.xml&'+
+                                'figure='+
+                                'gender='+
+                                'showClubSelections=0&'+
+                                'wmode=opaque',
+                    allowScriptAccess: true,
+                });
+                player.style.width = "435px";
+                player.style.height = "400px";
+                player.style.frameRate = "8";
+            });
+        </script>
 
 <meta name="description" content="Join the world's largest virtual hangout where you can meet and make friends. Design your own rooms, collect cool furniture, throw parties and so much more! Create your FREE {{ site.siteName }} today!" />
 <meta name="keywords" content="{{ site.siteName }}, virtual, world, join, groups, forums, play, games, online, friends, teens, collecting, social network, create, collect, connect, furniture, virtual, goods, sharing, badges, social, networking, hangout, safe, music, celebrity, celebrity visits, cele" />

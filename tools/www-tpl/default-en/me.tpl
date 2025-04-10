@@ -120,24 +120,36 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 	{% if site.serverOnline %}
     <div class="enter-hotel-btn">
         <div class="open enter-btn">
-            <a href="{{ site.sitePath }}/shockwave_client" target="shockwave_client" onclick="openOrFocusHabbo(this); return false;">Enter<i></i></a>
+            <a href="{{ site.sitePath }}/shockwave_client" target="shockwave_client" onclick="openOrFocusHabbo(this); return false;">Enter Shockwave<i></i></a>
             <b></b>
         </div>
     </div>
-    
+
     <div class="enter-beta-btn">
         <div class="open enter-btn">
-            <a href="{{ site.sitePath }}/flash_client" target="flash_client" onclick="openOrFocusHabbo(this); return false;">Enter Flash {{ site.siteName }}<i></i></a>
+            <a href="{{ site.sitePath }}/flash_client" target="flash_client" onclick="openOrFocusHabbo(this); return false;">Enter Flash<i></i></a>
             <b></b>
         </div>
     </div>
 	{% else %}
-	<div class="enter-hotel-btn">
+	<!-- <div class="enter-hotel-btn">
 		<div class="closed enter-btn">
 			<span>{{ site.siteName }} is offline</span>
 			<b></b>
-		</div>
-	</div>
+		</div> -->
+	<div class="enter-hotel-btn">
+        <div class="closed enter-btn">
+            <span>Enter Shockwave</span>
+            <b></b>
+        </div>
+    </div>
+
+    <div class="enter-beta-btn">
+        <div class="closed enter-btn">
+            <span>Enter Flash</span>
+            <b></b>
+        </div>
+    </div>
 	{% endif %}
 	
 	<div id="habbo-plate">
@@ -145,7 +157,7 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 			{% if playerDetails.motto.toLowerCase() == "crikey" %}
 			<img src='{{ site.staticContentPath }}/web-gallery/images/sticker_croco.gif' style='margin-top: 57px'>
 			{% else %}
-			<img alt="{{ playerDetails.getName() }}" src="{{ site.sitePath }}/habbo-imaging/avatarimage?figure={{ playerDetails.figure }}&size=b&direction=3&head_direction=3&crr=0&gesture=sml&frame=1" width="64" height="110" />
+			<img alt="{{ playerDetails.getName() }}" src="{{ site.sitePath }}/habbo-imaging/avatarimage?figure={{ playerDetails.figure }}&size=b&direction=2&head_direction=3&gesture=sml&action=wav" width="64" height="110" />
 			{% endif %}
 		</a>
 	</div>
@@ -363,7 +375,6 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
                 </div>
               </div>
 				{% endif %}
-				{% if hotCampaigns|length > 0 %}
 				<div class="habblet-container ">		
 						<div class="cbb clearfix orange ">
 
@@ -371,23 +382,24 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 							<h2 class="title">Hot Campaigns							</h2>
 						<div id="hotcampaigns-habblet-list-container">
     <ul id="hotcampaigns-habblet-list">
-	
-		{% set num = 0 %}
-		{% for HotCampaign in hotCampaigns %}
-		{% if num % 2 == 0 %}
-		<li class="even">
-		{% else %}
-		<li class="odd">
-		{% endif %}
+
+        <li class="even">
             <div class="hotcampaign-container">
-                <a href="{{ HotCampaign.url }}"><img src="{{ site.staticContentPath }}/c_images/hot_campaign_images_all/{{ HotCampaign.image }}" align="left" alt="{{ HotCampaign.title }}" /></a>
-                <h3>{{ HotCampaign.title }}</h3>
-                <p>{{ HotCampaign.description }}</p>
-                <p class="link"><a href="{{ HotCampaign.url }}">{{ HotCampaign.urlText }} &raquo;</a></p>
+                <a href="{{ site.sitePath }}/articles"><img src="{{ site.staticContentPath }}/c_images/hot_campaign_images_gb/beta.gif" align="left" alt="" /></a>
+                <h3>Under Construction</h3>
+                <p>Put interesting text in here, because this text is just useless sitting here otherwise!</p>
+                <p class="link"><a href="{{ site.sitePath }}">Go there &raquo;</a></p>
             </div>
         </li>
-		{% set num = num + 1 %}
-		{% endfor %}
+        
+        <li class="odd">
+            <div class="hotcampaign-container">
+                <a href="{{ site.sitePath }}/articles"><img src="{{ site.staticContentPath }}/c_images/hot_campaign_images_gb/habbobetahot.gif" align="left" alt="" /></a>
+                <h3>Under Construction</h3>
+                <p>Put interesting text in here, because this text is just useless sitting here otherwise!</p>
+                <p class="link"><a href="{{ site.sitePath }}">Go there &raquo;</a></p>
+            </div>
+        </li>
         
         <!-- 
         <li class="odd">
@@ -406,7 +418,6 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 						
 					</div>
 				</div>
-				{% endif %}
 
 				<script type="text/javascript">if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }</script>
 				
@@ -760,7 +771,7 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
     <h2>Tags</h2>
 
 							<ul class="box-tabs">
-								<li id="tab-1-5-1"><a href="#">{{ site.siteName }}s Like...</a><span class="tab-spacer"></span></li>
+								<li id="tab-1-5-1"><a href="#">{{ site.siteName }}es Like...</a><span class="tab-spacer"></span></li>
 								<li id="tab-1-5-2" class="selected"><a href="#">My Tags</a><span class="tab-spacer"></span></li>
 							</ul>
 						</div>

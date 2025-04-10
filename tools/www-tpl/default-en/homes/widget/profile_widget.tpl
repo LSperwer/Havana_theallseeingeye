@@ -19,7 +19,7 @@ Event.observe("widget-{{ sticker.getId() }}-edit", "click", function(e) { openEd
 		{% autoescape 'html' %}
 		<div class="name" style="float: left">
 		<span class="name-text">{{ user.getName() }}</span>
-							<img id="name-{{ user.getId() }}-report" class="report-button report-n"
+							<img id="name-4-report" class="report-button report-n"
 				alt="report"
 				src="{{ site.staticContentPath }}/web-gallery/images/myhabbo/buttons/report_button.gif"
 				style="display: none;" />
@@ -54,9 +54,9 @@ Event.observe("widget-{{ sticker.getId() }}-edit", "click", function(e) { openEd
 	</div>
 	{% autoescape 'html' %}
 		<div class="profile-motto">
-		{{ user.motto }}						<img id="motto-{{ user.getId() }}-report" class="report-button report-m"
+		{{ user.motto }}						<img id="motto-4-report" class="report-button report-n"
 			alt="report"
-			src="{{ site.sitePath }}/web-gallery/images/myhabbo/buttons/report_button.gif"
+			src="{{ site.staticContentPath }}/web-gallery/images/myhabbo/buttons/report_button.gif"
 			style="display: none;" />
 				<div class="clear"></div>
 	</div>

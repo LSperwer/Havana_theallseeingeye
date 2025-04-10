@@ -68,7 +68,7 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 
 <div id="client-topbar" style="display:none">
 
-  <div class="logo"><img src="{{ site.staticContentPath }}/web-gallery/images/popup/popup_topbar_lotuslogo.gif" alt="" align="middle"/></div>
+  <div class="logo"><img src="{{ site.staticContentPath }}/web-gallery/images/popup/popup_topbar_habbologo.gif" alt="" align="middle"/></div>
   <div class="habbocount"><div id="habboCountUpdateTarget">
 {{ site.formattedUsersOnline }} members online</div>
 	<script language="JavaScript" type="text/javascript">

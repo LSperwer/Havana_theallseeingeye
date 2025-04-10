@@ -209,10 +209,6 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 	{% endif %}
 	{% endif %}
 	<div class="myhabbo-view-tools">
-	{% if (session.loggedIn) and (user.id != playerDetails.id) %}
-			<a href="#" id="reporting-button" style="display: none;">Report</a>
-			<a href="#" id="stop-reporting-button" style="display: none;">Cancel Report!</a>
-	{% endif %}
 	</div>
 
     <h2 class="page-owner">{{ user.getName() }}</h2>

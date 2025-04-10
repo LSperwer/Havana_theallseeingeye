@@ -5,6 +5,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html" />
 	<title>{{ site.siteName }}: My details </title>
+	<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 
 <script type="text/javascript">
 var andSoItBegins = (new Date()).getTime();
@@ -218,6 +219,7 @@ Your {{ site.siteName }} had clothes or colors that are not selectable anymore. 
 <a href="#" id="settings-submit" class="new-button disabled-button"><b>Save changes</b><i></i></a>
 
 <script type="text/javascript" language="JavaScript">
+
 var swfobj = new SWFObject("{{ site.sitePath }}/flash/HabboRegistration.swf", "habboreg", "435", "400", "8");
 swfobj.addParam("base", "{{ site.sitePath }}/flash/");
 swfobj.addParam("wmode", "opaque");
@@ -235,14 +237,14 @@ swfobj.addVariable("userHasClub", "1");
 {% endif %}
 
 if (deconcept.SWFObjectUtil.getPlayerVersion()["major"] >= 8) {
-	$("settings-editor").setStyle({ textAlign: "center"});	swfobj.write("settings-editor");
-	$("settings-form").show();
-	
-	{% if playerDetails.hasClubSubscription() %}
-		$("settings-wardrobe").show();}
-	{% else %}
-		}
-	{% endif %}
+    $("settings-editor").setStyle({ textAlign: "center"});    swfobj.write("settings-editor");
+    $("settings-form").show();
+   
+    {% if playerDetails.hasClubSubscription() %}
+        $("settings-wardrobe").show();}
+    {% else %}
+        }
+    {% endif %}
 </script>
 
 </form>
@@ -253,6 +255,43 @@ if (deconcept.SWFObjectUtil.getPlayerVersion()["major"] >= 8) {
 </div>
 </div>
 </div>
+
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+        window.RufflePlayer.config = {
+            "autoplay": "on",
+            "unmuteOverlay": "hidden",
+            "splashScreen": false,
+        };
+</script>
+<script>
+    window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("settings-editor");
+        container.innerHTML = '';
+        container.appendChild(player);
+        player.load({
+            url: '{{ site.staticContentPath }}/flash/HabboRegistration.swf',
+            parameters: 'base={{ site.staticContentPath }}/flash/&'+
+                        'figuredata_url={{ site.staticContentPath }}/xml/figuredata.xml&'+
+                        'draworder_url={{ site.staticContentPath }}/xml/draworder.xml&'+
+                        'localization_url={{ site.staticContentPath }}/xml/figure_editor.xml&'+
+                        'figure={{ playerDetails.figure }}'+
+                        'gender={{ playerDetails.sex }}'+
+                        'habbos_url={{ site.staticContentPath }}/xml/promo_habbos_v2.xml&'+
+                        'showClubSelections=1&'+
+                        'wmode=opaque'
+                        {% if playerDetails.hasClubSubscription() %}
+                        +`userHasClub=1',
+                        {% endif %}
+            allowScriptAccess: true,          
+        });
+        player.style.width = "435px";
+        player.style.height = "400px";
+        player.style.frameRate = "8";
+    });
+</script>
 
 <script type="text/javascript">
 HabboView.run();

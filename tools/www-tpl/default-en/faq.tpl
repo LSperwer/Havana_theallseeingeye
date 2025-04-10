@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html" />
-	<title>{{ site.siteName }}:  </title>
+	<title>{{ site.siteName }}: FAQ </title>
 
 <script type="text/javascript">
 var andSoItBegins = (new Date()).getTime();
@@ -64,7 +64,7 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 <body id="faq" class="plain-template">
 <script src="{{ site.staticContentPath }}/web-gallery/static/js/faq.js" type="text/javascript"></script>
 <div id="faq" class="clearfix">
-<div id="faq-header" class="clearfix"><img src="{{ site.staticContentPath }}/web-gallery/v2/images/faq/faq_header.png" /><form method="post" action="{{ site.sitePath }}/help/faqsearch" class="search-box"><input type="text" id="faq-search" name="query" class="search-box-query search-box-onfocus" size="50" value="Search..."/><input type="submit" value="" title="Search" class="search" /></form></div>
+<div id="faq-header" class="clearfix"><img src="{{ site.staticContentPath }}/web-gallery/v2/images/faq/faq_header.png" /><form method="post" action="{{ site.sitePath }}/help/faq/faqsearch" class="search-box"><input type="text" id="faq-search" name="query" class="search-box-query search-box-onfocus" size="50" value="Search..."/><input type="submit" value="" title="Search" class="search" /></form></div>
 <div id="faq-container" class="clearfix">
 <div id="faq-category-list">
 <ul class="faq">

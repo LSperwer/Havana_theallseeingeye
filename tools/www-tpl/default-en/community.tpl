@@ -83,6 +83,8 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 				Community			</li>
     		<li class="">
 				<a href="{{ site.sitePath }}/articles">News</a>    		</li>
+			<li class="">
+				<a href="{{ site.sitePath }}/community/staff">Staff</a>    		</li>
     		<li class="">
 				<a href="{{ site.sitePath }}/tag">Tags</a>    		</li>
     		<li class="">

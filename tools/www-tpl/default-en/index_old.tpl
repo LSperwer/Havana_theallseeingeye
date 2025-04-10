@@ -4,7 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html" />
-	<title>{{ site.siteName }}: Home </title>
+	<title>{{ site.siteName }}: Lotus is a virtual world where you can meet and make friends </title>
+	<script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle@latest/ruffle.min.js"></script>
+
 
 <script type="text/javascript">
 var andSoItBegins = (new Date()).getTime();
@@ -84,7 +86,7 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 							<div class="landing-text-2"><span>Find your partner...</span></div>
 							<div class="landing-text-3"><span>...and make new friends :)</span></div>							
 							{% endif %}
-							<div id="landing-register-text"><a href="https://classichabbo.com/register"><span>Join now, it's free »</span></a></div>
+							<div id="landing-register-text"><a href="/register"><span>Join now, it's free »</span></a></div>
 							<div id="landing-promotional-text"><span>Habbo is a virtual world where you can meet and find your true love.</span></div>
 						</div>
 					</div>			
@@ -92,18 +94,15 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 					<div id="create-habbo" class="layout-static">
 						<div id="create-habbo-nonflash" style="background-image: url({{ site.staticContentPath }}/web-gallery/v2/images/landing/pixel.gif)">
 							<div class="landing-text-1"><span>Virtual world, real fun</span></div>
-							<div class="landing-text-2"><span>Create your Habbo...</span></div>
+							<div class="landing-text-2"><span>Create your Lotus...</span></div>
 							<div class="landing-text-3"><span>...and make new friends :)</span></div>
-							<div id="landing-register-text"><a href="https://classichabbo.com/register"><span>Join now, it's free »</span></a></div>
-							<div id="landing-promotional-text"><span>Habbo is a virtual world where you can meet and make friends.</span></div>
+							<div id="landing-register-text"><a href="/register"><span>Join now, it's free »</span></a></div>
+							<div id="landing-promotional-text"><span>Lotus is a virtual world where you can meet and make friends.</span></div>
 						</div>
 					</div>
 				{% endif %}
 </div>
-	
-						
-					
-				</div>
+
 				<script type="text/javascript">if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }</script>
 			 
 
@@ -190,12 +189,12 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 				</div>
 				<script type="text/javascript">if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }</script>
 
-				<div class="habblet-container "> <!--
+				<div class="habblet-container "> 
 	<div class="rounded" style="background-color: orange; color: white">
 			<strong>Attention!</strong><br />
-			This server has been wiped since December 11th, 2019 due to an unfortunate incident.<br />
+			Lotus is still in development. Registration is currently unavailable.<br />
 		</div>
-		<br /> -->
+		<br /> 
 				
 						<div class="ad-container">
 <!-- <a href="{{ site.sitePath }}/register"><img src="{{ site.staticContentPath }}/web-gallery/v2/images/landing/filler_ad.png" alt="" /></a> -->
@@ -221,7 +220,7 @@ body { behavior: url({{ site.staticContentPath }}/web-gallery/js/csshover.htc); 
 No tags to display.</div> -->
 
 				<div class="habblet box-content" id="tag-cloud-slim">
-				<span class="tags-habbos-like">{{ site.siteName }}s Like..</span>
+				<span class="tags-habbos-like">{{ site.siteName }}es Like..</span>
 				{% autoescape 'html' %}
 					{% if tagCloud|length > 0 %}
 						{% for kvp in tagCloud %}
